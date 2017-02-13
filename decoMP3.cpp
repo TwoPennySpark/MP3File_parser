@@ -94,6 +94,12 @@ int main(int argc, char**argv)
 	long int fd, size;
 	char tagbuf[3];
 	
+	if (argc != 2)
+	{
+		cout << "[-]Usage: <file>\n";
+		exit(0);
+	}
+	
 	//read first 3 bytes into the tagbuf
 	if ((fd = open(argv[1], O_RDONLY)) < 0)
 		exit(0);
